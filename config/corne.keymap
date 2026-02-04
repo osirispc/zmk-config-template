@@ -18,19 +18,19 @@
 
         BAS {
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp E         &kp R  &kp T        &kp Y      &kp U  &kp I          &kp O    &kp P     &kp BSPC
-&kp TAB    &kp A  &kp S  &kp D         &kp F  &kp G        &kp H      &kp J  &kp K          &kp L    &kp SEMI  &kp ENTER
-&kp LSHFT  &kp Z  &kp X  &kp C         &kp V  &kp B        &kp N      &kp M  &kp COMMA      &kp DOT  &kp FSLH  &kp RSHIFT
-                         &kp LEFT_GUI  &mo 2  &kp SPACE    &kp ENTER  &mo 1  &kp RIGHT_GUI
+&kp ESC  &kp Q  &kp W  &kp E         &kp R  &kp T        &kp Y      &kp U  &kp I          &kp O    &kp P     &kp BSPC
+&kp TAB  &kp A  &kp S  &kp D         &kp F  &kp G        &kp H      &kp J  &kp K          &kp L    &kp SEMI  &kp SINGLE_QUOTE
+&mo 4    &kp Z  &kp X  &kp C         &kp V  &kp B        &kp N      &kp M  &kp COMMA      &kp DOT  &kp FSLH  &kp DELETE
+                       &kp LEFT_GUI  &mo 2  &kp SPACE    &kp ENTER  &mo 1  &kp RIGHT_GUI
             >;
         };
 
         NUM {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&kp GRAVE  &kp EXCLAMATION  &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT    &kp N6  &kp N7  &kp N8  &kp N9                &kp N0                 &trans
+&trans     &kp N1           &kp N2     &kp N3     &kp N4      &kp N5         &kp N6  &kp N7  &kp N8  &kp N9                &kp N0                 &trans
+&trans     &trans           &kp UNDER  &kp EQUAL  &kp MINUS   &kp PLUS       &trans  &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+                                       &trans     &trans      &trans         &trans  &trans  &trans
             >;
         };
 
