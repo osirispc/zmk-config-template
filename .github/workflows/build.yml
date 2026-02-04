@@ -22,10 +22,10 @@ jobs:
           west init -l config
           west update
 
-      - name: Build Corne (nice_nano_v2)
+      - name: Build Corne (nice_nano)
         run: |
-          west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=corne_left
-          west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=corne_right
+          west build -s zmk/app -b nice_nano -- -DSHIELD=corne_left
+          west build -s zmk/app -b nice_nano -- -DSHIELD=corne_right
 
       - name: Upload firmware
         uses: actions/upload-artifact@v4
