@@ -4,6 +4,15 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+    macros {
+        osirisortiz: osirisortiz {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp O &kp S &kp I &kp R &kp I &kp S &kp O &kp R &kp T &kp I &kp Z>;
+            label = "OSIRISORTIZ";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -43,7 +52,7 @@
             >;
         };
 
-        layer_4 {
+        RGB {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &rgb_ug RGB_TOG
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
