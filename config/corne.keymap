@@ -36,10 +36,10 @@
 
         NAV {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans
+                        &trans  &trans  &trans    &trans          &trans          &trans
             >;
         };
 
@@ -54,9 +54,9 @@
 
         RGB {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_TOG
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &rgb_ug RGB_HUI                  &rgb_ug RGB_HUD
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &rgb_ug RGB_EFF                  &rgb_ug RGB_EFR
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &rgb_ug RGB_COLOR_HSB(242,100,50)  &rgb_ug RGB_COLOR_HSB(0,100,50)  &rgb_ug RGB_TOG
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans                             &rgb_ug RGB_HUI                  &rgb_ug RGB_HUD
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans                             &rgb_ug RGB_EFF                  &rgb_ug RGB_EFR
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
