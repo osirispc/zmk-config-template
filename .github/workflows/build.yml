@@ -2,20 +2,34 @@ name: Build ZMK firmware
 
 on:
   push:
-  pull_request:
+    paths:
+      - "config/**"
+      - ".github/workflows/build.yml"
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: zmkfirmware/zmk-build-arm:3.5
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build Corne (Nice!Nano v2)
-        uses: zmkfirmware/zmk-build-action@v1
+      - name: Initialize west
+        run: |
+          west init -l config
+          west update
+
+      - name: Build Corne (nice_nano_v2)
+        run: |
+          west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=corne_left
+          west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=corne_right
+
+      - name: Upload firmware
+        uses: actions/upload-artifact@v4
         with:
-          board: nice_nano_v2
-          shield: corne_left corne_right
-          keymap: config/corne.keymap
+          name: corne-firmware
+          path: |
+            build/zephyr/zmk.uf2
