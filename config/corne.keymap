@@ -8,21 +8,26 @@
 
         default_layer {
             bindings = <
-                /* LEFT HALF — rows top to bottom */
-                &kp Q     &kp W     &kp E     &kp R     &kp T     &kp Y
-                &kp A     &kp S     &kp D     &kp F     &kp G     &kp H
-                &kp Z     &kp X     &kp C     &kp V     &kp B     &kp N
+                /* ================= LEFT HALF ================= */
+                /* col1(mod) | col2–6 letters */
 
-                /* RIGHT HALF — rows top to bottom */
-                &kp U     &kp I     &kp O     &kp P     &kp LBKT  &kp RBKT
-                &kp J     &kp K     &kp L     &kp SEMI  &kp QUOT  &kp BSLH
-                &kp M     &kp COMMA &kp DOT   &kp SLASH &kp MINUS &kp EQUAL
+                &kp LCTRL  &kp Q &kp W &kp E &kp R &kp T
+                &kp LGUI   &kp A &kp S &kp D &kp F &kp G
+                &kp ESC    &kp Z &kp X &kp C &kp V &kp B
 
-                /* THUMBS — LEFT (inner → outer) */
-                &kp LGUI  &kp SPACE &kp TAB
+                /* ================= RIGHT HALF ================= */
+                /* col1–5 letters | col6(mod) */
 
-                /* THUMBS — RIGHT (inner → outer) */
-                &kp ENTER &kp BSPC  &kp RALT
+                &kp Y &kp U &kp I &kp O &kp P &kp RCTRL
+                &kp H &kp J &kp K &kp L &kp SEMI &kp RGUI
+                &kp N &kp M &kp COMMA &kp DOT &kp SLASH &kp ENTER
+
+                /* ================= THUMBS ================= */
+                /* LEFT (inner → outer) */
+                &kp SPACE &kp TAB &kp LALT
+
+                /* RIGHT (inner → outer) */
+                &kp ENTER &kp BSPC &kp RALT
             >;
         };
     };
