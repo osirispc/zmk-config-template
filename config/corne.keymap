@@ -9,18 +9,18 @@
         default_layer {
             bindings = <
                 /* ================= LEFT HALF ================= */
-                /* col1(mod) | col2–6 letters */
+                /* [MOD] Q W E R T */
 
                 &kp LCTRL  &kp Q &kp W &kp E &kp R &kp T
                 &kp LGUI   &kp A &kp S &kp D &kp F &kp G
-                &kp ESC    &kp Z &kp X &kp C &kp V &kp B
+                &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B
 
                 /* ================= RIGHT HALF ================= */
-                /* col1–5 letters | col6(mod) */
+                /* Y U I O P [MOD] */
 
                 &kp Y &kp U &kp I &kp O &kp P &kp RCTRL
                 &kp H &kp J &kp K &kp L &kp SEMI &kp RGUI
-                &kp N &kp M &kp COMMA &kp DOT &kp SLASH &kp ENTER
+                &kp N &kp M &kp COMMA &kp DOT &kp SLASH &kp RSHIFT
 
                 /* ================= THUMBS ================= */
                 /* LEFT (inner → outer) */
