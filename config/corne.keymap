@@ -1,6 +1,6 @@
+#include <boards/shields/corne/corne.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <boards/shields/corne/corne.dtsi>
 
 / {
     keymap {
@@ -8,26 +8,28 @@
 
         default_layer {
             bindings = <
-                /* ================= LEFT HALF ================= */
-                /* [MOD] Q W E R T */
+&kp ESC    &kp Q  &kp W  &kp E         &kp R  &kp T        &kp Y      &kp U  &kp I          &kp O    &kp P     &kp BSPC
+&kp TAB    &kp A  &kp S  &kp D         &kp F  &kp G        &kp H      &kp J  &kp K          &kp L    &kp SEMI  &kp ENTER
+&kp LSHFT  &kp Z  &kp X  &kp C         &kp V  &kp B        &kp N      &kp M  &kp COMMA      &kp DOT  &kp FSLH  &kp RSHIFT
+                         &kp LEFT_GUI  &mo 1  &kp SPACE    &kp ENTER  &mo 2  &kp RIGHT_GUI
+            >;
+        };
 
-                &kp LCTRL  &kp Q &kp W &kp E &kp R &kp T
-                &kp LGUI   &kp A &kp S &kp D &kp F &kp G
-                &kp LSHIFT &kp Z &kp X &kp C &kp V &kp B
+        layer_1 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
 
-                /* ================= RIGHT HALF ================= */
-                /* Y U I O P [MOD] */
-
-                &kp Y &kp U &kp I &kp O &kp P &kp RCTRL
-                &kp H &kp J &kp K &kp L &kp SEMI &kp RGUI
-                &kp N &kp M &kp COMMA &kp DOT &kp SLASH &kp RSHIFT
-
-                /* ================= THUMBS ================= */
-                /* LEFT (inner → outer) */
-                &kp SPACE &kp TAB &kp LALT
-
-                /* RIGHT (inner → outer) */
-                &kp ENTER &kp BSPC &kp RALT
+        layer_2 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
