@@ -18,11 +18,6 @@ jobs:
         with:
           path: config
 
-      - name: Upgrade west (fix zephyr mismatch)
-        run: |
-          python3 -m pip install --upgrade pip
-          python3 -m pip install --upgrade west
-
       - name: Init west workspace
         run: |
           west init -l config
