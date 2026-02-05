@@ -1,0 +1,53 @@
+name: Build ZMK firmware
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: zmkfirmware/zmk-build-arm:stable
+
+    steps:
+      - name: Checkout config repo
+        uses: actions/checkout@v4
+        with:
+          path: config
+
+      - name: Upgrade west (fix zephyr mismatch)
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install --upgrade west
+
+      - name: Init west workspace
+        run: |
+          west init -l config
+          west update
+
+      - name: Build LEFT
+        run: |
+          west build -s zmk/app -b nice_nano_v2 -d build/left -- \
+            -DSHIELD=corne_left \
+            -DZMK_CONFIG=$GITHUB_WORKSPACE/config/config
+
+      - name: Build RIGHT
+        run: |
+          west build -s zmk/app -b nice_nano_v2 -d build/right -- \
+            -DSHIELD=corne_right \
+            -DZMK_CONFIG=$GITHUB_WORKSPACE/config/config
+
+      - name: Collect firmware
+        run: |
+          mkdir -p artifacts
+          cp build/left/zephyr/zmk.uf2 artifacts/corne_left.uf2
+          cp build/right/zephyr/zmk.uf2 artifacts/corne_right.uf2
+
+      - name: Upload firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: zmk-firmware
+          path: artifacts/*.uf2
